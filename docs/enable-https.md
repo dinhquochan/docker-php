@@ -11,7 +11,7 @@ mkcert localhost
 Then copy your cert files on build stage of your Dockerfile:
 
 ```Dockerfile
-FROM pnlinh/laravel:php8.2
+FROM dinhquochan/laravel:php8.2
 
 COPY localhost.pem /usr/local/share/ca-certificates/my-cert.crt
 RUN cat /usr/local/share/ca-certificates/my-cert.crt >> /etc/ssl/certs/ca-certificates.crt
@@ -39,7 +39,7 @@ server {
     listen [::]:443 ssl;
     listen 443 ssl;
     server_name _;
-  
+
     ssl_certificate /etc/nginx/ssl/localhost.pem;
     ssl_certificate_key /etc/nginx/ssl/localhost-key.pem;
 
@@ -54,7 +54,7 @@ If you use docker-compose here is an example:
     build:
       context: .
       dockerfile: Dockerfile
-    ports: 
+    ports:
       - "80:80"
       - "443:443"
     volumes:

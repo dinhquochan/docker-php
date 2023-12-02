@@ -1,4 +1,4 @@
-FROM pnlinh/laravel:php8.2
+FROM dinhquochan/laravel:php8.2
 
 # Install xdebug
 RUN apk add --no-cache php82-pecl-xdebug

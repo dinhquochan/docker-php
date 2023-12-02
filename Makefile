@@ -1,4 +1,4 @@
-IMAGE?=pnlinh/laravel:php
+IMAGE?=dinhquochan/laravel:php
 DOCKER_RUN:=docker run --rm ${IMAGE}${VERSION}
 DEFAULT_ARCHS?=linux/arm64
 ARCHS?=linux/amd64,linux/arm64,linux/arm/v8,linux/arm/v7,linux/arm/v6
@@ -19,8 +19,6 @@ release-all: ### Build all PHP version and push image to DockerHub
 	VERSION=8.2 make release
 	VERSION=8.1 make release
 	VERSION=8.0 make release
-	VERSION=7.4 make release
-	VERSION=7.2 make release
 
 test: ### Test image
 	$(DOCKER_RUN) php -v
@@ -33,5 +31,3 @@ test-all: ### Test all image
 	VERSION=8.2 make build test
 	VERSION=8.1 make build test
 	VERSION=8.0 make build test
-	VERSION=7.4 make build test
-	VERSION=7.2 make build test

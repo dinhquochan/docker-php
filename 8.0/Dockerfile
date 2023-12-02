@@ -1,6 +1,6 @@
 ARG ALPINE_VERSION=3.16
 FROM alpine:${ALPINE_VERSION}
-LABEL Maintainer="Ngoc Linh Pham <pnlinh1207@gmail.com>"
+LABEL Maintainer="Han Dinh Quoc <dqh@dinhquochan.com>"
 LABEL Description="Lightweight container with Nginx 1.22 & PHP 8.0 based on Alpine Linux."
 
 # Setup document root
